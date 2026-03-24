@@ -1,0 +1,173 @@
+.day-cell {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  min-height: 100px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+}
+
+.day-cell.other-month {
+  background: #f9fafb;
+}
+
+.day-cell.today .day-number {
+  background: #1e40af;
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.day-number {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-month .day-number {
+  color: #d1d5db;
+}
+
+.add-chore-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #9ca3af;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.day-cell:hover .add-chore-btn {
+  opacity: 1;
+}
+
+.add-chore-btn:hover {
+  background: #f3f4f6;
+  color: #1e40af;
+}
+
+.chore-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chore-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--chip-color) 15%, white);
+  border-left: 3px solid var(--chip-color);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s;
+}
+
+.chore-chip:hover {
+  background: color-mix(in srgb, var(--chip-color) 25%, white);
+}
+
+.chore-chip.done .chip-label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.chip-check {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--chip-color);
+}
+
+.chip-label {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #111827;
+}
+
+.chip-assignee {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--chip-color);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.overflow-badge {
+  font-size: 10px;
+  color: #6b7280;
+  padding: 1px 4px;
+  font-weight: 500;
+}
+
+/* Drag-select highlight */
+.day-cell.selected {
+  background: #eff6ff;
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+.day-cell.selected .day-number {
+  color: #1e40af;
+}
+
+/* Drag-and-drop target highlight */
+.day-cell.drag-over {
+  background: #f0fdf4;
+  outline: 2px dashed #10b981;
+  outline-offset: -2px;
+}
+
+/* Disable text selection while drag-selecting */
+.calendar-grid.selecting,
+.calendar-grid.selecting * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Dragging chip cursor */
+.chore-chip[draggable="true"] {
+  cursor: grab;
+}
+
+.chore-chip[draggable="true"]:active {
+  cursor: grabbing;
+  opacity: 0.6;
+}

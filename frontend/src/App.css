@@ -1,0 +1,47 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  height: 52px;
+  background: #1e3a8a;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.app-logo {
+  font-size: 20px;
+}
+
+.app-header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.btn-add-chore {
+  padding: 7px 16px;
+  background: #fff;
+  color: #1e3a8a;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.btn-add-chore:hover {
+  background: #dbeafe;
+}
+
+.app-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
